@@ -1,0 +1,37 @@
+/*
+ * Родительский build.gradle для многомодульного проекта
+ * Содержит общие настройки для всех модулей
+ */
+
+// Применяем плагины для всех подпроектов
+subprojects {
+    // Применяем Java плагин ко всем модулям
+    apply plugin: 'java'
+    
+    // Настройка версии Java
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    
+    // Настройка кодировки
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+    
+    // Репозитории для загрузки зависимостей
+    repositories {
+        mavenCentral()
+    }
+    
+    // Общие зависимости для всех модулей
+    dependencies {
+        // JUnit для тестирования
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    }
+    
+    // Настройка тестов
+    test {
+        useJUnitPlatform()
+    }
+}
+

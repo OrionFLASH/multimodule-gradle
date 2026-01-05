@@ -1,0 +1,11 @@
+/*
+ * Настройки многомодульного проекта Gradle
+ * Определяет все модули проекта
+ */
+rootProject.name = 'multimodule-gradle'
+
+// Список всех модулей проекта
+include 'utils'
+include 'service'
+include 'app'
+

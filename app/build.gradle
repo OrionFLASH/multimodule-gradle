@@ -1,0 +1,29 @@
+/*
+ * Build.gradle для модуля app
+ * Главный модуль приложения, зависит от service и utils
+ */
+
+// Плагин для создания исполняемого JAR
+apply plugin: 'application'
+
+// Главный класс приложения
+mainClassName = 'ru.netology.app.Main'
+
+dependencies {
+    // Зависимости от других модулей проекта
+    implementation project(':service')
+    implementation project(':utils')
+}
+
+// Настройка для создания исполняемого JAR
+jar {
+    manifest {
+        attributes 'Main-Class': 'ru.netology.app.Main'
+    }
+    // Включаем все зависимости в JAR
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+

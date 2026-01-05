@@ -1,0 +1,10 @@
+/*
+ * Build.gradle для модуля service
+ * Содержит бизнес-логику и зависит от utils
+ */
+
+dependencies {
+    // Зависимость от модуля utils
+    implementation project(':utils')
+}
+
