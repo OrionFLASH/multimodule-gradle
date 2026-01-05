@@ -5,9 +5,6 @@
 
 // Применяем плагины для всех подпроектов
 subprojects {
-    // Применяем Java плагин ко всем модулям
-    apply plugin: 'java'
-    
     // Настройка версии Java
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
