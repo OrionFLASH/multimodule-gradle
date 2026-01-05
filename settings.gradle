@@ -5,7 +5,7 @@
 rootProject.name = 'multimodule-gradle'
 
 // Список всех модулей проекта
-include 'utils'
+include 'db'
 include 'service'
-include 'app'
+include 'api'
 

@@ -1,10 +1,21 @@
 /*
  * Build.gradle для модуля service
- * Содержит бизнес-логику и зависит от utils
+ * Содержит бизнес-логику и зависит от db
  */
 
+plugins {
+    id 'java'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    // Зависимость от модуля utils
-    implementation project(':utils')
+    // Зависимость от модуля db
+    implementation project(":db")
 }
 

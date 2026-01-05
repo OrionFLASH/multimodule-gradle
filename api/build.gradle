@@ -1,0 +1,21 @@
+/*
+ * Build.gradle для модуля api
+ * Модуль работы с web, зависит от db и service
+ */
+
+plugins {
+    id 'java'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Зависимости от других модулей проекта
+    implementation project(":db")
+    implementation project(":service")
+}
